@@ -1,0 +1,70 @@
+<div class="addItem">
+  <section class="itemSect">
+  <h1>Add an Item</h1>
+
+  <form [formGroup]="itemForm"
+        (ngSubmit)="submitItem()"
+  >
+    <!-- The user inputs the item's name here -->
+    <input type="text"
+           id="itemname"
+           placeholder="Item Name"
+           formControlName="itemname"
+           required  
+    />
+
+    <!-- The user input for the item's name is checked here -->
+    <div *ngIf="itemForm.controls['itemname'].invalid && (itemForm.controls['itemname'].dirty || itemForm.controls['itemname'].touched)" class="alert alert-danger">
+      <div *ngIf="itemForm.controls['itemname'].errors?.['required']">
+        Item name is required.
+      </div>
+      <div *ngIf="itemForm.controls['itemname'].errors?.['minlength']">
+        Item name must be at least 4 characters long.
+      </div>
+      <div *ngIf="itemForm.controls['itemname'].errors?.['maxlength']">
+        Item name cannot be longer than 30 characters.
+      </div>
+      <div *ngIf="itemForm.controls['itemname'].errors?.['pattern']">
+        Item name can only contains uppercase or lowercase letters or whitespace.
+      </div>
+    </div>
+
+    <!-- The user inputs the item's description  here -->
+    <input type="text"
+           id="itemdescription"
+           placeholder="Item Description" 
+           formControlName="itemdescription"
+           required   
+    />
+
+    <!-- The user input for the item's description is checked here -->
+    <div *ngIf="itemForm.controls['itemdescription'].invalid && (itemForm.controls['itemdescription'].dirty || itemForm.controls['itemdescription'].touched)" class="alert alert-danger">
+      <div *ngIf="itemForm.controls['itemdescription'].errors?.['required']">
+        Item description is required.
+      </div>
+      <div *ngIf="itemForm.controls['itemdescription'].errors?.['minlength']">
+        Item description must be at least 4 characters long.
+      </div>
+      <div *ngIf="itemForm.controls['itemdescription'].errors?.['maxlength']">
+        Item description cannot be longer than 100 characters.
+      </div>
+      <div *ngIf="itemForm.controls['itemdescription'].errors?.['pattern']">
+        Item description can only contain upper and lowercase letters, periods, commas, and question marks.
+      </div>
+    </div>
+
+    <select id="character_dropdown_item">
+      <option disabled selected hidden>Item Level</option>
+      <option *ngFor="let level of allLevels">{{level}}</option>
+    </select>
+
+    <select id="class_dropdown_item">
+      <option disabled selected hidden>Item Class</option>
+      <option *ngFor="let iclass of allClasses.allClasses">{{iclass}}</option>
+    </select>
+
+    <button class="submit" type="reset" id="itemreset" (click)="itemreset()">Reset Values</button>
+    <button class="submit" type="submit" id="itemsubmit" [disabled]="!itemForm.valid">Submit</button>
+  </form>
+  </section>
+</div>

@@ -1,0 +1,53 @@
+<router-outlet>
+  <!-- Navigation Bar with Routing Links-->
+  <nav class="navbar navbar-expand navbar-dark bg-dark">
+    <a *ngIf="loggedIn()" class="nav-item nav-link" routerLink="/"><img src="assets/images/D&Dgold.png" width="75" height="42" alt="D&D logo"></a>
+    <div class="navbar-center">
+      <div class="navbar-nav" *ngIf="loggedIn()">
+        <!-- This is what changes the routing on the navigation bar-->
+        <!-- NOTE: routerLink must match the path indicated in app.component.html-->
+        <!-- NOTE: The order these tabs are listed are the order they appear on navigation bar-->
+        <!-- Example: Logged-In User Only Sees These Tabs In Order = Logout/Profile/Classes/Spells/Items/Characters-->
+        <!-- NOTE: DO NOT INCLUDE a routerLink here for a "hidden" route, such as items/create-->
+        <!--If admin or user is logged in, display logout tab-->
+        <a class="nav-item nav-link" routerLink="/" (click)="logout()" *ngIf="loggedIn()">Logout</a>
+
+        <!--If user is logged in, display normal profile tab-->
+        <a class="nav-item nav-link" routerLink="/profile" *ngIf="loggedIn()">Profile</a>
+        <a class="nav-item nav-link" routerLink="/help">Help</a>
+
+        <!--If admin or user is logged in, display these tabs-->
+        <a id="classestab" class="nav-item nav-link" routerLink="/classes" *ngIf="loggedIn()">Classes</a>
+        <a id="items" class="nav-item nav-link" routerLink="/items" *ngIf="loggedIn()">Items</a>
+
+        <select (click)="profileChoice()" id="chars" class="Characters">
+          <option disabled hidden selected>Characters</option>
+          <option id="opts">Create A New Character</option>
+          <option id="opts">View All Characters</option>
+          <option id="opts">View All Items By Character</option>
+        </select>
+
+        <!--If admin is logged in, display admin profile tab-->
+        <select (click)="adminChoice()" id="adminProf" class="Admin" *ngIf="loggedIn() && isAdmin()">
+          <option disabled hidden selected>Admin</option>
+          <option id="opts">View Users</option>
+          <option id="opts">Add Items</option>
+          <option id="opts">Edit Items</option>
+        </select>
+
+      </div>
+    </div>
+  </nav>
+
+  <!-- Home Page Content Container -->
+  <div class="jumbotron">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-8 offset-sm-2">
+          <router-outlet>
+          </router-outlet>
+        </div>
+      </div>
+    </div>
+  </div>
+</router-outlet>

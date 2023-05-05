@@ -1,0 +1,101 @@
+
+<div class="allUsers">
+  <button (click)="viewHide()" class="submit">{{this.text}}</button>
+  <!--View and Delete User Table Data-->
+  <div id="tableData" class="tbl-content">
+
+    <h1>All Users</h1>
+    <div class="search-items">
+      <input class="form-control"
+             type="text"
+             name="searchAll"
+             id="searchAll"
+             [(ngModel)]="searchText"
+             autocomplete="off"
+             placeholder="Start searching for a item by class, name, description, or level" />
+    </div>
+    <table id="tabl" cellpadding="0" cellspacing="0" border="0">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Username</th>
+          <th>Email</th>
+          <th>ID</th>
+          <th>Admin</th>
+          <th>Delete User</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of Users | filter : searchText; let i = index">
+          <td class="Name">{{user.Name}}</td>
+          <td class="Username">{{user.Username}}</td>
+          <td class="Email">{{user.Email}}</td>
+          <td class="ID">{{user.ID}}</td>
+          <td class="Admin">{{user.adm}}</td>
+          <td (click)="deleteUser(user.Username)" class="delete">DELETE</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+  <!--Edit User Data-->
+  <div class="users">
+    <select (click)="chooseUser()" id="chooseUser">
+      <option value="Edit User" disabled selected hidden>Edit User</option>
+      <option *ngFor="let user of Users" value=user.Username class="Name" id="curUser">{{user.Username}}</option>
+    </select>
+
+    <h1 class="profile">Profile</h1>
+    <h1 class="profile">Information</h1>
+    <form [formGroup]="form" (ngSubmit)="editUser()">
+
+      <!-- User's name input -->
+      <input id="name" formControlName="name" class="name" placeholder="{{curUser.Name}}" type="text" />
+
+      <!-- User's name validation -->
+      <div *ngIf="form.controls['name'].invalid && (form.controls['name'].dirty || form.controls['name'].touched)" class="alert alert-danger">
+        <div class="divName" *ngIf="this.editUsersSubmitted && form.controls['name'].errors?.['minlength']">
+          Name must be at least 4 characters long.
+        </div>
+        <div class="divName" *ngIf="this.editUsersSubmitted && form.controls['name'].errors?.['maxlength']">
+          Name cannot be longer than 30 characters.
+        </div>
+        <div class="divName" *ngIf="this.editUsersSubmitted && form.controls['name'].errors?.['pattern']">
+          Name cannot contain special characters or numbers.
+        </div>
+      </div>
+
+      <!-- User's email input -->
+      <input id="email" formControlName="email" class="email" placeholder="{{curUser.Email}}" type="email" />
+
+      <!-- User's email validation -->
+      <div *ngIf="form.controls['email'].invalid && (form.controls['email'].dirty || form.controls['email'].touched)" class="alert alert-danger">
+        <div class="divEmail" *ngIf="this.editUsersSubmitted && form.controls['email'].errors?.['email']">
+          The email must be valid.
+        </div>
+      </div>
+
+      <!-- User's password input -->
+      <input id="password" formControlName="password" class="pwd" placeholder="Password" type="password" />
+
+      <!-- User's password validation -->
+      <div *ngIf="form.controls['password'].invalid && (form.controls['email'].dirty || form.controls['email'].touched)" class="alert alert-danger">
+        <div class="divPwd" *ngIf="this.editUsersSubmitted && form.controls['password'].errors?.['minlength']">
+          Password must be at least 8 characters long.
+        </div>
+        <div class="divPwd" *ngIf="this.editUsersSubmitted && form.controls['password'].errors?.['maxlength']">
+          Password cannot be longer than 30 characters.
+        </div>
+      </div>
+
+      <!--Check box to set user as admin-->
+      <div>
+        <input id="Adm" class="adm" name="Set As Admin" type="checkbox" />
+        <label>Set as Admin</label>
+      </div>
+
+      <button id="edit" (click)="edited()" class="edit">EDIT</button>
+    </form>
+    <button (click)="back()" class="back">PROFILE</button>
+  </div>

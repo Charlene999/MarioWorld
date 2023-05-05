@@ -1,0 +1,11 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+  background-size: cover;
+  position: absolute;
+  background-image: url('assets/images/D&Dbackground.jpg');
+  background-repeat: revert;
+  background-attachment: fixed;
+  left: 0;
+  right: 0;
+  margin: 0, 0;
+}

@@ -1,0 +1,60 @@
+<a class="nav-item nav-link" routerLink="/"><img src="assets/images/D&Dgold.png" width="75" height="42" alt="D&D logo"></a>
+<div class="login">
+
+  <h1>Login</h1>
+
+  <form [formGroup]="form"
+        (ngSubmit)="onSubmit()"
+  >
+    <!-- The user inputs username here -->
+    <input type="text"
+           id="username"
+           placeholder="Username" 
+           formControlName="username"
+           required   
+    />
+
+    <!-- The user input for username is checked here -->
+    <div *ngIf="form.controls['username'].invalid && (form.controls['username'].dirty || form.controls['username'].touched)" class="alert alert-danger">
+      <div *ngIf="form.controls['username'].errors?.['required']">
+        Username is required.
+      </div>
+      <div *ngIf="form.controls['username'].errors?.['minlength']">
+        Username must be at least 4 characters long.
+      </div>
+      <div *ngIf="form.controls['username'].errors?.['pattern']">
+        Username can only contain characters or numbers.
+      </div>
+    </div>
+
+    <!-- The user inputs password here -->
+    <input type="password"
+           id="password"
+           placeholder="Password" 
+           formControlName="password"
+           required     
+    />
+
+    <!-- The user input for password is checked here -->
+    <div *ngIf="form.controls['password'].invalid && (form.controls['password'].dirty || form.controls['password'].touched)" class="alert alert-danger">
+      <div *ngIf="form.controls['password'].errors?.['required']">
+        Password is required.
+      </div>
+      <div *ngIf="form.controls['password'].errors?.['minlength']">
+        Password must be at least 8 characters long.
+      </div>
+    </div>
+
+    <button class="submit" type="submit" id="submit" [disabled]="!form.valid">Submit</button>
+  </form>
+</div>
+<!-- Original Form
+<div class="login">
+    <h1>Login</h1>
+    <form method="post" #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
+        <input name="username" type="username" placeholder="Username" required="required" ngModel>
+        <input name="password" type="password" placeholder="Password" required="required" ngModel>
+        <button class="submit">Login</button>
+    </form>
+</div>
+-->

@@ -1,0 +1,5 @@
+<a class="nav-item nav-link" routerLink="/" id="logo" *ngIf="!loggedIn()"><img src="assets/images/D&Dgold.png" width="75" height="42" alt="D&D logo"></a>
+<div class="home">
+    <button class="submit" id="login" (click)="login()" *ngIf="!loggedIn()">Existing User? Login Here.</button>
+    <button class="submit" id="signup" (click)="signup()" *ngIf="!loggedIn()">New User? Sign Up Here.</button>
+</div>

@@ -1,0 +1,121 @@
+<a class="nav-item nav-link" routerLink="/"><img src="assets/images/D&Dgold.png" width="75" height="42" alt="D&D logo"></a>
+<div class="register">
+
+  <h1>Register</h1>
+
+  <form [formGroup]="form"
+        (ngSubmit)="onSubmit()"
+  >
+    <!-- The user inputs name here -->
+    <input type="text"
+           id="name"
+           placeholder="Name"
+           formControlName="name"
+           required  
+    />
+
+    <!-- The user input for name is checked here -->
+    <div *ngIf="form.controls['name'].invalid && (form.controls['name'].dirty || form.controls['name'].touched)" class="alert alert-danger">
+      <div *ngIf="form.controls['name'].errors?.['required']">
+        Name is required.
+      </div>
+      <div *ngIf="form.controls['name'].errors?.['minlength']">
+        Name must be at least 4 characters long.
+      </div>
+      <div *ngIf="form.controls['name'].errors?.['pattern']">
+        Name cannot contain special characters or numbers.
+      </div>
+    </div>
+
+    <!-- The user inputs username here -->
+    <input type="text"
+           id="username"
+           placeholder="Username" 
+           formControlName="username"
+           required   
+    />
+
+    <!-- The user input for username is checked here -->
+    <div *ngIf="form.controls['username'].invalid && (form.controls['username'].dirty || form.controls['username'].touched)" class="alert alert-danger">
+      <div *ngIf="form.controls['username'].errors?.['required']">
+        Username is required.
+      </div>
+      <div *ngIf="form.controls['username'].errors?.['minlength']">
+        Username must be at least 4 characters long.
+      </div>
+      <div *ngIf="form.controls['username'].errors?.['pattern']">
+        Username can only contain characters or numbers.
+      </div>
+    </div>
+
+    <!-- The user inputs email here -->
+    <input type="email"
+           id="email"
+           placeholder="Email" 
+           formControlName="email"
+           required      
+    />
+
+    <!-- The user input for email is checked here -->
+    <div *ngIf="form.controls['email'].invalid && (form.controls['email'].dirty || form.controls['email'].touched)" class="alert alert-danger">
+      <div *ngIf="form.controls['email'].errors?.['required']">
+        Email is required.
+      </div>
+      <div *ngIf="form.controls['email'].errors?.['email']">
+        The email must be valid.
+      </div>
+    </div>
+
+    <!-- The user inputs password here -->
+    <input type="password"
+           id="password"
+           placeholder="Enter New Password" 
+           formControlName="password"
+           required     
+    />
+
+    <!-- The user input for password is checked here -->
+    <div *ngIf="form.controls['password'].invalid && (form.controls['password'].dirty || form.controls['password'].touched)" class="alert alert-danger">
+      <div *ngIf="form.controls['password'].errors?.['required']">
+        Password is required.
+      </div>
+      <div *ngIf="form.controls['password'].errors?.['minlength']">
+        Password must be at least 8 characters long.
+      </div>
+    </div>
+
+    <!-- The user inputs password2 here
+    <input type="password" 
+           placeholder="Confirm Password" 
+           formControlName="password2"
+           required    
+    />
+    The user input for password2 is checked here
+    <div *ngIf="form.controls['password2'].invalid && (form.controls['password2'].dirty || form.controls['password2'].touched)" class="alert alert-danger">
+      <div *ngIf="form.controls['password2'].errors?.['required']">
+        Reentering the password is required.
+      </div>
+      <div *ngIf="form.controls['password2'].errors?.['confirmedValidator']">
+        Passwords do not match.
+      </div>
+    </div>
+    -->
+
+    <button class="submit" type="reset" id="reset" (click)="reset()">Reset Values</button>
+    <button class="submit" type="submit" id="submit" [disabled]="!form.valid">Submit</button>
+  </form>
+</div>
+
+<!-- Original Form
+<div class="register">
+  <h1>Register</h1>
+  <form method="post" #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
+    <input name="name" type="name" placeholder="Name" required="required" ngModel/>
+    <input name="username" type="username" placeholder="Username" required="required" ngModel/>
+    <input name="email" type="email" placeholder="Email" required="required" ngModel/>
+    <input name="password" type="password" placeholder="Enter New Password" required="required" ngModel/>
+    <input name="password2" type="password2" placeholder="Enter New Password Again" required="required" ngModel/>
+    <button class="submit">Submit</button>
+  </form>
+</div>
+-->

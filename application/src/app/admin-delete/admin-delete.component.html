@@ -1,0 +1,77 @@
+<div class="items">
+
+  <div id="itemTabl" class="tbl-content">
+
+    <h1>Update Items</h1>
+    <div class="search-items">
+      <input *ngIf="All()"
+             class="form-control"
+             type="text"
+             name="searchAll"
+             id="searchAll"
+             [(ngModel)]="searchText"
+             autocomplete="off"
+             placeholder="Start searching for a item by class, name, description, or level" />
+      <input *ngIf="!All()"
+             class="form-control"
+             type="text"
+             name="searchNotAll"
+             id="searchNotAll"
+             [(ngModel)]="searchText"
+             autocomplete="off"
+             placeholder="Start searching for a item by name, description, or level" />
+    </div>
+    <table id="itemTable" cellpadding="0" cellspacing="0" border="0">
+      <thead>
+        <tr>
+          <td id="itemValid" colspan="7" class="adminItem"></td>
+        </tr>
+        <tr>
+          <th colspan="2">Name</th>
+          <th>Description</th>
+          <th>Level</th>
+          <th>Class</th>
+          <th>Delete Item</th>
+          <th>Edit Item</th>
+        </tr>
+      </thead>
+      <tbody *ngIf="All()">
+        <tr *ngFor="let item of allItems | filter : searchText; let i = index">
+
+          <td class="Image">
+            <img src="{{IDToImage(item.ID)}}" alt="{{item.Name}}" width="39" height="39" >
+          </td>
+          <td id="itemName" class="Name" contenteditable="true">{{item.Name}}</td>
+          <td id="itemDesc" class="Description" contenteditable="true">{{item.Description}}</td>
+          <td class="Level" contenteditable="false">{{item.Level}}</td>
+          <td class="Class" contenteditable="false">{{item.Class}}</td>
+          <td (click)="deleteItem(item.ID, item.Name)" class="delete">Delete</td>
+          <td (click)="editItem(item, i)" class="edit">EDIT</td>
+        </tr>
+      </tbody>
+
+      <tbody *ngIf="!All()">
+        <tr *ngFor="let item of curClassItems | filter : searchText; let i = index">
+
+          <td class="Image">
+            <img src="{{IDToImage(item.ID)}}" alt="{{item.Name}}" width="39" height="39">
+          </td>
+          <td id="itemName" class="Name" contenteditable="true">{{item.Name}}</td>
+          <td id="itemDesc" class="Description" contenteditable="true">{{item.Description}}</td>
+          <td class="Level" contenteditable="false">{{item.Level}}</td>
+          <td class="Class" contenteditable="false">{{item.Class}}</td>
+          <td (click)="deleteItem(item.ID, item.Name)" class="delete">Delete</td>
+          <td (click)="editItem(item, i)" class="edit">EDIT</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="classSelect">
+      <select id="classSel" (click)="showItems()">
+        <option disabled selected hidden>Select Class</option>
+        <option *ngFor="let iclass of allClasses.allClasses" class="Name" id="class_dropdown">{{iclass}}</option>
+      </select>
+    </div>
+  </div>
+</div>
+

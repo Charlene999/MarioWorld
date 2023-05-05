@@ -1,0 +1,30 @@
+<div class="email">
+
+    <h1>Update Email</h1>
+  
+    <form [formGroup]="form"
+          (ngSubmit)="onSubmit()"
+    >
+
+      <!-- The user inputs email here -->
+      <input type="email"
+             id="email"
+             placeholder="Email" 
+             formControlName="email"
+             required      
+      />
+  
+      <!-- The user input for email is checked here -->
+      <div *ngIf="form.controls['email'].invalid && (form.controls['email'].dirty || form.controls['email'].touched)" class="alert alert-danger">
+        <div class="fieldMsg" *ngIf="form.controls['email'].errors?.['required']">
+          Email is required.
+        </div>
+        <div class="fieldMsg" *ngIf="form.controls['email'].errors?.['email']">
+          The email must be valid.
+        </div>
+      </div>
+
+      <button class="submit" type="submit" id="submit" [disabled]="!form.valid">Submit</button>
+    </form>
+  <h2 class="back" routerLink="/profile">BACK</h2>
+  </div>

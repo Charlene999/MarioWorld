@@ -1,0 +1,31 @@
+<div class="name">
+  <h1>Update Name</h1>
+
+  <form [formGroup]="form"
+        (ngSubmit)="onSubmit()">
+    <!-- The user inputs name here -->
+    <input type="text"
+           id="name"
+           placeholder="Name"
+           formControlName="name"
+           required />
+
+    <!-- The user input for name is checked here -->
+    <div *ngIf="form.controls['name'].invalid && (form.controls['name'].dirty || form.controls['name'].touched)" class="alert alert-danger">
+      <div class="fieldMsg" *ngIf="form.controls['name'].errors?.['required']">
+        Name is required.
+      </div>
+      <div class="fieldMsg" *ngIf="form.controls['name'].errors?.['minlength']">
+        Name must be at least 4 characters long.
+      </div>
+      <div class="fieldMsg" *ngIf="form.controls['name'].errors?.['pattern']">
+        Name cannot contain special characters or numbers.
+      </div>
+    </div>
+
+    <button class="submit" type="submit" id="submit" [disabled]="!form.valid">Submit</button>
+  </form>
+
+  <h2 class="back" routerLink="/profile">BACK</h2>
+
+</div>

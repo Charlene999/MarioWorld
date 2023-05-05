@@ -1,0 +1,359 @@
+.submit, .back, .edit {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  padding: 4px 10px 4px;
+  margin-bottom: 0;
+  font-size: 13px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  line-height: 18px;
+  text-align: center;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+  vertical-align: middle;
+  background-color: transparent;
+  background-repeat: repeat-x;
+  border-color: #e6e6e6 #e6e6e6 #e6e6e6;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  border: 1px solid #e6e6e6;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  *margin-left: .3em;
+}
+
+  .submit:active, .back:active, .edit:active {
+    background-color: transparent;
+  }
+
+.submit, .back, .edit {
+  padding: 9px 14px;
+  font-size: 15px;
+  line-height: normal;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
+  .submit:hover, .back:hover, .edit:hover {
+    background-color: rgba(226, 108, 34, .9);
+    text-shadow: 0 0 10px rgba(0,0,0,1);
+    color: rgb(255, 180, 0);
+    text-decoration: none;
+    background-position: 0 -15px;
+    -webkit-transition: background-position 0.1s linear;
+    -moz-transition: background-position 0.1s linear;
+    -o-transition: background-position 0.1s linear;
+    transition: background-position 0.1s linear;
+  }
+
+
+.submit, .edit, .back {
+  background-color: rgba(255, 180, 0, 1);
+  color: rgb(226, 108, 34);
+  text-shadow: 0 0 10px rgba(255, 255, 255, 1);
+  font-weight: 600;
+  background-repeat: repeat-x;
+  border: 1px solid #ff8c00;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+  .submit:active, .back:active, .edit:active {
+    color: white;
+    background-color: rgb(255, 180, 0);
+    font-weight: 600;
+    filter: none;
+  }
+
+.submit {
+  width: 25%;
+  top: 20.75%;
+  left: 21.5%;
+  position: fixed;
+  display: block;
+}
+
+.back{
+    position: relative;
+}
+
+.form-control {
+  width: 100%;
+  margin-bottom: 10px;
+  background: rgba(0,0,0,.7);
+  border: none;
+  outline: none;
+  padding: 10px;
+  font-size: 13px;
+  color: #fff;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.6);
+  border: 1px solid rgba(0,0,0,0.3);
+  border-radius: 4px;
+  box-shadow: inset 0 -5px 45px rgba(100,100,100,0.5), 0 1px 1px rgba(255,255,255,0.2);
+  -webkit-transition: box-shadow .5s ease;
+  -moz-transition: box-shadow .5s ease;
+  -o-transition: box-shadow .5s ease;
+  transition: box-shadow .5s ease;
+}
+
+  .form-control:focus {
+    box-shadow: inset 0 -5px 45px rgba(100,100,100,0.05), 0 1px 1px rgba(255,255,255,0.1);
+  }
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+h1 {
+  color: rgb(255, 180, 0);
+  text-shadow: 0 0 10px rgba(0,0,0,1);
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+.name, .uName, .email, .pwd {
+  width: 100%;
+  margin-bottom: 10px;
+  background: rgba(0,0,0,.7);
+  border: none;
+  outline: none;
+  padding: 10px;
+  font-size: 13px;
+  color: #fff;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.6);
+  border: 1px solid rgba(0,0,0,0.3);
+  border-radius: 4px;
+  box-shadow: inset 0 -5px 45px rgba(100,100,100,0.5), 0 1px 1px rgba(255,255,255,0.2);
+  -webkit-transition: box-shadow .5s ease;
+  -moz-transition: box-shadow .5s ease;
+  -o-transition: box-shadow .5s ease;
+  transition: box-shadow .5s ease;
+}
+
+  .name:focus, .uName:focus, .email:focus, .pwd :focus {
+    box-shadow: inset 0 -5px 45px rgba(100,100,100,0.05), 0 1px 1px rgba(255,255,255,0.1);
+  }
+
+.adm {
+  transform: scale(1.4);
+  margin-right: 11px;
+}
+.users h1 {
+  margin: 0px;
+}
+
+table {
+  width: 100%;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  border-color: rgb(255,180,0);
+  text-shadow: 0 1px 1px rgba(255, 120, 0, 0.75);
+}
+
+.tbl-header {
+  background-color: rgba(226, 88, 34, .36);
+  text-align: center;
+}
+
+.tbl-content {
+  position: absolute;
+  width: 60%;
+  position: fixed;
+  left: 35%;
+  top: 60%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  border-radius: 6px;
+  table-layout: fixed;
+  height: 65%;
+  margin-top: 0px;
+  background-color: rgba(226, 108, 34, .9);
+  border: 2.5px solid rgba(255,180,0,1.0);
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 1);
+  overflow-y: auto;
+  text-align: center;
+}
+
+th {
+  padding: 20px 15px;
+  text-align: center;
+  font-weight: 500;
+  font-size: 18px;
+  background-color: rgba(226, 108, 34, .8);
+  color: rgb(255, 180, 0);
+  border: 1px solid rgba(255,180,0,1);
+  text-shadow: 0 0 18px rgba(0,0, 0,1);
+  text-transform: uppercase;
+}
+
+td {
+  color: rgb(255, 180, 0);
+  padding: 20px;
+  text-align: center;
+  vertical-align: middle;
+  font-weight: 300;
+  font-size: 14px;
+  border: 1px solid rgb(255,180,0);
+  border-bottom: solid 1px rgba(255,255,255,0.1);
+  text-shadow: 0 0 10px rgba(0,0,0,1);
+  overflow-x: auto;
+}
+
+
+/* demo styles */
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,300,700);
+
+body {
+  background: -webkit-linear-gradient(left, #25c481, #25b7c4);
+  background: linear-gradient(to right, #25c481, #25b7c4);
+  font-family: 'Roboto', sans-serif;
+}
+
+.delete {
+  font-size: 18px;
+}
+
+  .delete:hover{
+    cursor: pointer;
+    color: rgb(255, 0, 0);
+  }
+
+  .delete:active {
+    color: rgb(255, 120, 0);
+  }
+
+.edit, .back, .submit {
+  font-size: 18px;
+}
+
+.edit {
+  position: absolute;
+  top: 84.4%;
+  right: 5%;
+}
+  .edit:hover {
+    cursor: pointer;
+  }
+
+.back {
+    top: 5%;
+}
+
+.Username:hover{
+  cursor: pointer;
+  color: rgb(255, 255, 0);
+}
+
+.Username:active{
+  color: rgb(255, 120, 0);
+}
+
+.users {
+  position: absolute;
+  width: 30%;
+  height: 65%;
+  position: fixed;
+  right: 5%;
+  top: 60%;
+  -webkit-transform: translate(5%, -50%);
+  transform: translate(5%, -50%);
+  padding: 10px;
+  background-color: rgba(226, 108, 34, .9);
+  border: 2.5px solid rgba(255,180,0,1.0);
+  border-radius: 6px;
+}
+
+.users select {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: rgba(255, 180, 0, 1);
+    color: rgb(226, 108, 34);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 1);
+    font-weight: 600;
+    padding: 12px;
+    width: 100%;
+    border: none;
+    font-size: 24px;
+    -webkit-appearance: button;
+    appearance: button;
+    outline: groove;
+    border-radius: 4px;
+    outline-color: rgb(255, 120, 0);
+    text-align: center;
+    margin-bottom: 15px;
+  }
+
+.users select:hover, .users select option:hover {
+      background-color: rgba(226, 88, 34, .36);
+      text-shadow: 0 0 10px rgba(0,0,0,1);
+      color: rgb(255, 180, 0);
+    }
+
+.users select option {
+  background-color: rgba(255, 180, 0, 1);
+  color: rgb(226, 108, 34);
+  padding: 30px;
+}
+
+.users select option:hover {
+  padding: 30px;
+}
+.users select {
+  text-shadow: 0 0 10px rgba(255, 255, 255, 1);
+}
+users::before {
+    font-family: FontAwesome;
+    width: 20%;
+    height: 100%;
+    text-align: center;
+    font-size: 28px;
+    line-height: 45px;
+    color: rgba(255, 255, 255,1);
+    background-color: rgba(255, 255, 255, 0.1);
+    pointer-events: none;
+  }
+
+.users:hover::before {
+    color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+
+.users h2 {
+  text-align: center;
+  --bgcolor: rgba(256, 256, 256, 50%);
+  background-color: var(--bgcolor);
+  box-shadow: 0 0 6px 6px var(--bgcolor);
+  color: rgba(0, 0, 0, 1);
+  text-shadow: 0 0 10px rgba(0,0,0,1);
+}
+label {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 18px;
+  font-weight:500;
+  color: rgb(255, 180, 0);
+  text-shadow: rgba(0, 0, 0, 1);
+}
+
+.divEmail, .divPwd, .divName {
+    color:white;
+    text-shadow: rgba(0, 0, 0, 1);
+}
+
+.tableTitle {
+  font-size: 25px;
+  color: rgb(255, 180, 0);
+  background-color: rgba(226, 108, 34, .9);
+  text-shadow: 0 0 10px rgba(0,0,0,1);
+  letter-spacing: 1px;
+  text-align: center;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}

@@ -1,0 +1,23 @@
+<div class="create-characters" >
+  <h1>Create A New Character</h1>
+  <form method="post" #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
+
+    <input name="name" id="Name" type="text" placeholder="Character Name" required="required" ngModel />
+    <label *ngIf="validName(f.value.name)">{{invalidName}}</label>
+
+    <input name="description" id="Desc" type="text" placeholder="Character Description" required="required" ngModel />
+    <label *ngIf="validDescription(f.value.description)">{{invalidDesc}}</label>
+
+    <select id="character_dropdown">
+      <option disabled selected hidden>Character Level</option>
+      <option *ngFor="let level of allLevels">{{level}}</option>
+    </select>
+
+    <select id="class_dropdown">
+      <option disabled selected hidden>Character Class</option>
+      <option *ngFor="let iclass of allClasses">{{iclass}}</option>
+    </select>
+    
+    <button id ="submit" class="submit">Submit</button>
+  </form>
+</div>

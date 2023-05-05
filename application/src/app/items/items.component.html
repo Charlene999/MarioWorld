@@ -1,0 +1,66 @@
+<div class="items">
+  <div class="characters">
+    <select id="classes" (click)="showItems()">
+      <option disabled selected hidden>Select Class</option>
+      <option *ngFor="let iclass of allClasses.allClasses" class="Level" id="class_dropdown" >{{iclass}}</option>
+    </select>
+  </div>
+  <div class="tbl-content">
+    <h1>All Items</h1>
+    <div class="search-items">
+      <input *ngIf="All()"
+        class="form-control"
+        type="text"
+        name="searchAll"
+        id="searchAll"
+        [(ngModel)]="searchText"
+        autocomplete="off"
+        placeholder="Start searching for a item by class, name, description, or level"
+        />
+      <input *ngIf="!All()"
+        class="form-control"
+        type="text"
+        name="searchNotAll"
+        id="searchNotAll"
+        [(ngModel)]="searchText"
+        autocomplete="off"
+        placeholder="Start searching for a item by name, description, or level"
+      />
+    </div>
+    <table id="tabl" cellpadding="0" cellspacing="0" border="0">
+      <thead>
+        <tr>
+          <th *ngIf="All()">Class</th>
+          <th colspan="2">Name</th>
+          <th>Level</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody *ngIf="All()">
+        <tr *ngFor="let item of allItems | filter : searchText">
+          <td class="Class">{{item.Class}}</td>
+          <td class="Image">
+            <img src="{{IDToImage(item.ID)}}" alt="{{item.Name}}" width="39" height="39">
+          </td>
+          <td class="Name">
+            {{item.Name}}
+
+          </td>
+          <td class="Level">{{item.Level}}</td>
+          <td class="Description">{{item.Description}}</td>
+        </tr>
+      </tbody>
+      <tbody *ngIf="!All()">
+        <tr *ngFor="let item of curClassItems | filter : searchText">
+          <td class="Image">
+            <img src="{{IDToImage(item.ID)}}" alt="{{item.Name}}" width="39" height="39">
+          </td>
+          <td class="Name">{{item.Name}}</td>
+          <td class="Level">{{item.Level}}</td>
+          <td class="Description">{{item.Description}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
