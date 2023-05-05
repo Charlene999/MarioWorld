@@ -21,8 +21,8 @@ html {
 }
 
   .items h1 {
-    color: rgb(255, 180, 0);
-    text-shadow: 0 0 10px rgba(0,0,0,1);
+    color: rgb(255, 255, 255);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 1);
     letter-spacing: 1px;
     text-align: center;
   }
@@ -35,8 +35,8 @@ html {
 }
 
   .characters select {
-    background-color: rgba(255, 180, 0, 1);
-    color: rgb(226, 108, 34);
+    background-color: rgba(11,64,240, 1);
+    color: rgb(255, 255, 255);
     text-shadow: 0 0 10px rgba(255, 255, 255, 1);
     font-weight: 600;
     padding: 12px;
@@ -48,16 +48,16 @@ html {
     appearance: button;
     outline: groove;
     border-radius: 4px;
-    outline-color: rgb(255, 120, 0);
+    outline-color: rgb(255, 255, 255);
     font-family: Georgia, 'Times New Roman', Times, serif;
     text-shadow: rgba(0, 0, 0, 1);
     text-align: center;
   }
 
     .characters select:hover, .characters select option:hover {
-      background-color: rgba(226, 108, 34, 1);
-      text-shadow: 0 0 10px rgba(0,0,0,1);
-      color: rgb(255, 180, 0);
+      background-color: rgba(255, 0, 0, 1);
+      text-shadow: 0 0 10px rgba(255, 255, 255, 1);
+      color: rgb(255, 255, 255);
     }
 
       .characters select option:hover {
@@ -112,13 +112,13 @@ input {
 table {
   width: 100%;
   font-family: Georgia, 'Times New Roman', Times, serif;
-  border-color: rgb(255,180,0);
-  border: 0px solid rgba(255,180,0,1.0);
-  text-shadow: 0 1px 1px rgba(255, 120, 0, 0.75);
+  border-color: rgb(255,255, 255);
+  border: 0px solid rgba(255,255, 255,1.0);
+  text-shadow: 0 0px 8px rgba(255, 255, 255, 1);
 }
 
 .tbl-header {
-  background-color: rgba(226, 88, 34, .36);
+  background-color: rgba(11,64,240, .36);
   background-size: 300px;
   background-position-x: center;
   text-align: center;
@@ -130,9 +130,9 @@ table {
   position: center;
   height: 400px;
   margin-top: 0px;
-  background-color: rgba(226, 108, 34, .9);
-  border: 2.5px solid rgba(255,180,0,1.0);
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 1);
+  background-color: rgba(11,64,240, .8);
+  text-shadow: 0 0 10px rgba(255, 255, 255,1);
+  border: 2.5px solid rgba(255,255, 255,1.0);
   overflow-y: auto;
   text-align: center;
 }
@@ -141,19 +141,18 @@ th {
   text-align: center;
   font-weight: 500;
   font-size: 18px;
-  background-color: rgba(226, 108, 34, .8);
-  color: rgb(255, 180, 0);
-  border: 1px solid rgba(255,180,0,1);
+  color: rgb(255, 255, 255);
+  border: 1px solid rgba(255,255, 255,1);
   text-shadow: 0 0 18px rgba(0,0, 0,1);
   text-transform: uppercase;
 }
 
 td {
   text-transform: uppercase;
-  color: rgb(255, 180, 0);
+  color: rgb(255, 255, 255);
   padding: 15px;
-  border: 1px solid rgb(255,180,0);
-  border-bottom: solid 1px rgba(255,180,0,1);
+  border: 1px solid rgb(255, 255, 255);
+  border-bottom: solid 1px rgba(255,255,255,1);
   border-right-color: transparent;
   overflow-x: auto;
   font-weight: 300;
@@ -165,9 +164,9 @@ td {
 }
 .Name {
   text-transform: uppercase;
-  color: rgb(255, 180, 0);
+  color: rgb(255, 255, 255);
   padding: 15px;
-  border-bottom: solid 1px rgba(255,180,0,1);
+  border-bottom: solid 1px rgba(255, 255, 255,1);
   border-left-color: transparent;
   overflow-x: auto;
   font-weight: 300;
@@ -175,13 +174,13 @@ td {
 }
 .Class
 {
-    border-right-color: rgb(255, 180, 0)
+    border-right-color: rgb(255, 255, 255)
 }
 .Image {
   text-transform: uppercase;
-  color: rgb(255, 180, 0);
+  color: rgb(255, 255,255);
   padding: 15px;
-  border-bottom: solid 1px rgba(255,180,0,1);
+  border-bottom: solid 1px rgba(255,255,255,1);
   border-right-color: transparent;
   overflow-x: auto;
   font-weight: 300;
@@ -194,9 +193,10 @@ img {
 }
 
 .characters select option {
-  background-color: rgba(255, 180, 0, 1);
-  color: rgb(226, 108, 34);
   padding: 30px;
+  background-color: rgba(11,64,240, 1);
+  color: rgb(255, 255, 255);
+  text-shadow: 0 0 10px rgba(255, 255, 255, 1);
   font-size: 25px;
 }
 
@@ -210,6 +210,7 @@ img {
   }
 
   .Add:active {
-    color: rgb(255, 120, 0);
+      font-weight: 700;
+      text-shadow: 0 0 10px rgb(0, 0, 0);
   }
 

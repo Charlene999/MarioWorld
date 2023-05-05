@@ -199,118 +199,117 @@ export function IdToImage(ID: number): string {
   var url: string = "";
   switch (ID) {
 
-    case 3:
+    case 1:
       url = "/assets/images/redShell.png";
       break;
 
-    case 4:
+    case 2:
       url = "/assets/images/rocket.png";
       break;
 
-    case 5:
+    case 3:
       url = "/assets/images/lightning.png";
       break;
 
-    case 6:
+    case 4:
       url = "/assets/images/star.png";
       break;
 
-    case 7:
+    case 5:
       url = "/assets/images/banana.png";
       break;
 
-    case 8:
+    case 6:
       url = "/assets/images/blueShell.png";
       break;
 
-    case 9:
+    case 7:
       url = "/assets/images/crownSpeed.png";
       break;
 
-    case 10:
+    case 8:
       url = "/assets/images/bombomb.png";
       break;
 
-    case 11:
+    case 9:
       url = "/assets/images/cloudLightning.png";
       break;
 
-    case 12:
+    case 10:
       url = "/assets/images/greenShell.png";
       break;
 
-    case 13:
+    case 11:
       url = "/assets/images/shroomSpeed.png";
       break;
 
-    case 14:
+    case 12:
       url = "/assets/images/pseudoBox.png";
       break;
 
-    case 15:
+    case 13:
       url = "/assets/images/blooper.png";
       break;
 
-    case 16:
+    case 14:
       url = "/assets/images/kingBoo.png";
       break;
 
-    case 17:
+    case 15:
       url = "/assets/images/tripleGreenShell.png";
       break;
 
-    case 18:
+    case 16:
       url = "/assets/images/giant.png";
       break;
 
-    case 19:
+    case 17:
       url = "/assets/images/fireFlower.png";
       break;
 
-    case 20:
+    case 18:
       url = "/assets/images/iceFlower.png";
       break;
 
-    case 21:
+    case 19:
       url = "/assets/images/penguin.png";
       break;
 
-    case 22:
+    case 20:
       url = "/assets/images/tripleRedShell.png";
       break;
 
-    case 23:
+    case 21:
       url = "/assets/images/boomerang.png";
       break;
 
-    case 24:
+    case 22:
       url = "/assets/images/blueShroom.png";
       break;
 
-    case 25:
+    case 23:
       url = "/assets/images/3Bananas.png";
       break;
 
-    case 26:
+    case 24:
       url = "/assets/images/3Shrooms.png";
       break;
 
-    case 27:
+    case 25:
       url = "/assets/images/flyingSquirrel.png";
       break;
 
-    case 28:
+    case 26:
       url = "/assets/images/yoshi.png";
       break;
 
-    case 29:
+    case 27:
       url = "/assets/images/superSquirrel.png";
       break;
 
-    case 30:
+    case 28:
       url = "/assets/images/propeller.png";
       break;
-
 
     default:
 

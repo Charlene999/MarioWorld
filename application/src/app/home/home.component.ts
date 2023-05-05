@@ -13,7 +13,7 @@ export class HomeComponent {
   signupSubmitted: Boolean;
 
   constructor(private router: Router, private title: Title) {
-    title.setTitle("The Perfect Path");
+    title.setTitle("Mario World");
     this.loginSubmitted = false; 
     this.signupSubmitted = false; 
   }

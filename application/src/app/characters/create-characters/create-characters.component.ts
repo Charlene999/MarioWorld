@@ -18,7 +18,7 @@ export class CreateCharactersComponent {
 
   constructor(private http: HttpClient, private router: Router, private title: Title) {
     title.setTitle("Create a Character");
-    this.allClasses = ["Sorcerer", "Barbarian", "Bard", "Druid", "Shaman", "Hunter", "Necromancer", "Rogue", "Paladin", "Priest"];
+    this.allClasses = ["Visionary", "Slippery Spy", "Ice Master", "Detonator", "Accelerator", "Sharp Shooter", "Shell Shooter", "Animalist", "Paladin", "Avenger"];
     this.allLevels = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
     this.createSubmitted = false;
     this.invalidName ="";

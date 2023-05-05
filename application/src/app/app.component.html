@@ -1,7 +1,7 @@
 <router-outlet>
   <!-- Navigation Bar with Routing Links-->
   <nav class="navbar navbar-expand navbar-dark bg-dark">
-    <a *ngIf="loggedIn()" class="nav-item nav-link" routerLink="/"><img src="assets/images/D&Dgold.png" width="75" height="42" alt="D&D logo"></a>
+    <a *ngIf="loggedIn()" class="nav-item nav-link" routerLink="/"><img src="assets/images/MarioLogo.png" width="75" height="75" alt="Mario logo"></a>
     <div class="navbar-center">
       <div class="navbar-nav" *ngIf="loggedIn()">
         <!-- This is what changes the routing on the navigation bar-->
@@ -35,6 +35,7 @@
           <option id="opts">Edit Items</option>
         </select>
 
+        <a id="game" class="nav-item nav-link" routerLink="" *ngIf="loggedIn()">PLAY</a>
       </div>
     </div>
   </nav>

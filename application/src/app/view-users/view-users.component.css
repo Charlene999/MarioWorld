@@ -39,9 +39,11 @@
 }
 
   .submit:hover, .back:hover, .edit:hover {
-    background-color: rgba(226, 108, 34, .9);
-    text-shadow: 0 0 10px rgba(0,0,0,1);
-    color: rgb(255, 180, 0);
+    background-color: rgba(255, 255, 255, 1);
+    text-shadow: 0 0 10px rgba(255,0,0,1);
+    color: rgb(255, 0, 0);
+    border: 2px solid #ff0000;
+    text-shadow: 0px 0px 10px rgba(255, 0, 0,1);
     text-decoration: none;
     background-position: 0 -15px;
     -webkit-transition: background-position 0.1s linear;
@@ -52,19 +54,19 @@
 
 
 .submit, .edit, .back {
-  background-color: rgba(255, 180, 0, 1);
-  color: rgb(226, 108, 34);
-  text-shadow: 0 0 10px rgba(255, 255, 255, 1);
-  font-weight: 600;
+  color: white;
+  background-color: rgba(11,64,240, .8);
   background-repeat: repeat-x;
-  border: 1px solid #ff8c00;
+  border: 1px solid #ffffff;
+  font-weight: 500;
+  background-repeat: repeat-x;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.5);
 }
 
   .submit:active, .back:active, .edit:active {
     color: white;
-    background-color: rgb(255, 180, 0);
-    font-weight: 600;
+    border-color: white;
+    background-color: red;
     filter: none;
   }
 
@@ -80,26 +82,29 @@
     position: relative;
 }
 
-.form-control {
+.form-control, .name, .uName, .email, .pwd {
   width: 100%;
   margin-bottom: 10px;
-  background: rgba(0,0,0,.7);
+  background-color: rgba(255, 0, 0, .7);
   border: none;
   outline: none;
   padding: 10px;
   font-size: 13px;
-  color: #fff;
   text-shadow: 1px 1px 1px rgba(0,0,0,0.6);
   border: 1px solid rgba(0,0,0,0.3);
   border-radius: 4px;
-  box-shadow: inset 0 -5px 45px rgba(100,100,100,0.5), 0 1px 1px rgba(255,255,255,0.2);
+  box-shadow: inset 0 -5px 45px rgba(11,64,240, .9), 0 1px 1px rgba(255,255,255,0.8);
   -webkit-transition: box-shadow .5s ease;
   -moz-transition: box-shadow .5s ease;
   -o-transition: box-shadow .5s ease;
   transition: box-shadow .5s ease;
+  color: rgba(255,255, 255,1);
+  text-decoration-color: rgba(255,255, 255,1);
 }
-
-  .form-control:focus {
+  .form-control:hover.name:hover, .uName:hover, .email:hover, .pwd :hover {
+    background-color: rgba(255, 0, 0, .6);
+  }
+  .form-control:focus, .name:focus, .uName:focus, .email:focus, .pwd :focus {
     box-shadow: inset 0 -5px 45px rgba(100,100,100,0.05), 0 1px 1px rgba(255,255,255,0.1);
   }
 * {
@@ -115,34 +120,12 @@ html {
 }
 
 h1 {
-  color: rgb(255, 180, 0);
-  text-shadow: 0 0 10px rgba(0,0,0,1);
+  color: rgb(255, 255, 255);
+  text-shadow: 0 0 10px rgba(255, 255, 255, 1);
   letter-spacing: 1px;
   text-align: center;
 }
 
-.name, .uName, .email, .pwd {
-  width: 100%;
-  margin-bottom: 10px;
-  background: rgba(0,0,0,.7);
-  border: none;
-  outline: none;
-  padding: 10px;
-  font-size: 13px;
-  color: #fff;
-  text-shadow: 1px 1px 1px rgba(0,0,0,0.6);
-  border: 1px solid rgba(0,0,0,0.3);
-  border-radius: 4px;
-  box-shadow: inset 0 -5px 45px rgba(100,100,100,0.5), 0 1px 1px rgba(255,255,255,0.2);
-  -webkit-transition: box-shadow .5s ease;
-  -moz-transition: box-shadow .5s ease;
-  -o-transition: box-shadow .5s ease;
-  transition: box-shadow .5s ease;
-}
-
-  .name:focus, .uName:focus, .email:focus, .pwd :focus {
-    box-shadow: inset 0 -5px 45px rgba(100,100,100,0.05), 0 1px 1px rgba(255,255,255,0.1);
-  }
 
 .adm {
   transform: scale(1.4);
@@ -155,12 +138,13 @@ h1 {
 table {
   width: 100%;
   font-family: Georgia, 'Times New Roman', Times, serif;
-  border-color: rgb(255,180,0);
-  text-shadow: 0 1px 1px rgba(255, 120, 0, 0.75);
+  border-color: rgb(255,255, 255);
+  border: 0px solid rgba(255,255, 255,1.0);
+  text-shadow: 0 0px 8px rgba(255, 255, 255, 1);
 }
 
 .tbl-header {
-  background-color: rgba(226, 88, 34, .36);
+  background-color: rgba(11,64,240, .36);
   text-align: center;
 }
 
@@ -176,9 +160,9 @@ table {
   table-layout: fixed;
   height: 65%;
   margin-top: 0px;
-  background-color: rgba(226, 108, 34, .9);
-  border: 2.5px solid rgba(255,180,0,1.0);
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 1);
+  background-color: rgba(11,64,240, .8);
+  text-shadow: 0 0 10px rgba(255, 255, 255,1);
+  border: 2.5px solid rgba(255,255, 255,1.0);
   overflow-y: auto;
   text-align: center;
 }
@@ -188,23 +172,23 @@ th {
   text-align: center;
   font-weight: 500;
   font-size: 18px;
-  background-color: rgba(226, 108, 34, .8);
-  color: rgb(255, 180, 0);
-  border: 1px solid rgba(255,180,0,1);
+  background-color: rgba(11,64,240, .36);
+  color: rgb(255, 255, 255);
+  border: 1px solid rgba(255,255, 255,1);
   text-shadow: 0 0 18px rgba(0,0, 0,1);
   text-transform: uppercase;
 }
 
 td {
-  color: rgb(255, 180, 0);
   padding: 20px;
   text-align: center;
   vertical-align: middle;
   font-weight: 300;
   font-size: 14px;
-  border: 1px solid rgb(255,180,0);
-  border-bottom: solid 1px rgba(255,255,255,0.1);
-  text-shadow: 0 0 10px rgba(0,0,0,1);
+  color: rgb(255, 255, 255);
+  padding: 15px;
+  border: 1px solid rgb(255, 255, 255);
+  border-bottom: solid 1px rgba(255,255,255,1);
   overflow-x: auto;
 }
 
@@ -223,13 +207,15 @@ body {
   font-size: 18px;
 }
 
-  .delete:hover{
+  .delete:hover {
     cursor: pointer;
     color: rgb(255, 0, 0);
+    text-shadow: 0 0 10px rgb(255, 255, 255);
   }
 
   .delete:active {
-    color: rgb(255, 120, 0);
+    text-shadow: 0 0 10px rgb(0, 0, 0);
+    font-weight: 800;
   }
 
 .edit, .back, .submit {
@@ -268,15 +254,16 @@ body {
   -webkit-transform: translate(5%, -50%);
   transform: translate(5%, -50%);
   padding: 10px;
-  background-color: rgba(226, 108, 34, .9);
-  border: 2.5px solid rgba(255,180,0,1.0);
+  background-color: rgba(255, 0, 0, .8);
+  text-shadow: 0 0 10px rgba(255, 255, 255,1);
+  border: 2.5px solid rgba(255,255, 255,1.0);
   border-radius: 6px;
 }
 
-.users select {
+  .users select {
     font-family: Georgia, 'Times New Roman', Times, serif;
-    background-color: rgba(255, 180, 0, 1);
-    color: rgb(226, 108, 34);
+    background-color: rgba(11,64,240, 1);
+    color: rgb(255, 255, 255);
     text-shadow: 0 0 10px rgba(255, 255, 255, 1);
     font-weight: 600;
     padding: 12px;
@@ -287,22 +274,24 @@ body {
     appearance: button;
     outline: groove;
     border-radius: 4px;
-    outline-color: rgb(255, 120, 0);
+    outline-color: rgb(255, 255, 255);
     text-align: center;
     margin-bottom: 15px;
   }
 
-.users select:hover, .users select option:hover {
-      background-color: rgba(226, 88, 34, .36);
-      text-shadow: 0 0 10px rgba(0,0,0,1);
-      color: rgb(255, 180, 0);
+    .users select:hover, .users select option:hover {
+      background-color: rgba(255, 0, 0, 1);
+      text-shadow: 0 0 10px rgba(255, 255, 255, 1);
+      color: rgb(255, 255, 255);
     }
 
-.users select option {
-  background-color: rgba(255, 180, 0, 1);
-  color: rgb(226, 108, 34);
-  padding: 30px;
-}
+    .users select option {
+      padding: 30px;
+      background-color: rgba(11,64,240, 1);
+      color: rgb(255, 255, 255);
+      text-shadow: 0 0 10px rgba(255, 255, 255, 1);
+      font-size: 25px;
+    }
 
 .users select option:hover {
   padding: 30px;
@@ -339,7 +328,7 @@ label {
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-size: 18px;
   font-weight:500;
-  color: rgb(255, 180, 0);
+  color: rgb(255, 255, 255);
   text-shadow: rgba(0, 0, 0, 1);
 }
 
