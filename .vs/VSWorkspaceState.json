@@ -2,15 +2,13 @@
   "ExpandedNodes": [
     "",
     "\\application",
-    "\\application\\server",
-    "\\application\\server\\controllers",
-    "\\application\\server\\router",
     "\\application\\src",
     "\\application\\src\\app",
-    "\\application\\src\\app\\items",
+    "\\application\\src\\app\\admin-add",
+    "\\application\\src\\app\\minesweeper-game-play",
     "\\application\\src\\assets",
-    "\\application\\src\\assets\\images"
+    "\\application\\src\\assets\\audio"
   ],
-  "SelectedNode": "\\application\\src\\app\\items\\items.component.css",
+  "SelectedNode": "\\application\\src\\styles.css",
   "PreviewInSolutionExplorer": false
 }

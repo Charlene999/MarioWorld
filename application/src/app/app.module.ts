@@ -21,6 +21,8 @@ import { NameComponent } from './users/users-edit/name/name.component';
 import { EmailComponent } from './users/users-edit/email/email.component';
 import { CharactersItemsComponent } from './characters/characters-items/characters-items.component';
 import { HelpComponent } from './help/help.component';
+import { UnoGamePlayComponent } from './uno-game-play/uno-game-play.component';
+import { MinesweeperGamePlayComponent } from './minesweeper-game-play/minesweeper-game-play.component';
 
 @NgModule({
   //Components
@@ -42,6 +44,8 @@ import { HelpComponent } from './help/help.component';
     HomeComponent,
     CharactersItemsComponent,
     HelpComponent,
+    UnoGamePlayComponent,
+    MinesweeperGamePlayComponent,
   ],
   //Modules
   imports: [

@@ -76,6 +76,7 @@
   left: 21.5%;
   position: fixed;
   display: block;
+  background-color: rgba(255, 0, 0, 1);
 }
 
 .back{
@@ -172,7 +173,7 @@ th {
   text-align: center;
   font-weight: 500;
   font-size: 18px;
-  background-color: rgba(11,64,240, .36);
+  background-color: rgba(255, 0, 0, 1);
   color: rgb(255, 255, 255);
   border: 1px solid rgba(255,255, 255,1);
   text-shadow: 0 0 18px rgba(0,0, 0,1);

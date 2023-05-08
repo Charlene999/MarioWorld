@@ -13,7 +13,11 @@ export class AppComponent {
   constructor(private router: Router, private title: Title) {
     this.hover = false;
   }
-  
+
+  ngOnInit() {
+    this.Unmute();
+    console.log("UNMUTED!!!")
+  }
   loggedIn() {
     if (localStorage.getItem('id_token') === null) {
       return false;
@@ -86,4 +90,19 @@ export class AppComponent {
     select.selectedIndex = 0;
   }
 
+  Muted(){
+    var mute = document.getElementById("homeSong") as HTMLAudioElement;
+    return mute.muted;
+  }
+
+  Mute() {
+
+    var mute = document.getElementById("homeSong") as HTMLAudioElement;
+    mute.muted = true;
+  }
+
+  Unmute() {
+    var mute = document.getElementById("homeSong") as HTMLAudioElement;
+    mute.muted = false;
+  }
 }

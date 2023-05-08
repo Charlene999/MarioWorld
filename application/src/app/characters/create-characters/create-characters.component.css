@@ -19,7 +19,7 @@ html {
   top: 60%;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-  background-color: rgba(11,64,240, .8);
+  background-color: rgba(255, 0, 0, .8);
   text-shadow: 0 0 10px rgba(0,0,0,1);
   border: 2.5px solid rgba(255,255, 255,1.0);
   border-radius: 6px;
@@ -32,8 +32,6 @@ html {
     text-align: center;
   }
 
-
-
 input {
   width: 100%;
   margin-bottom: 10px;
@@ -45,7 +43,7 @@ input {
   text-shadow: 1px 1px 1px rgba(0,0,0,0.6);
   border: 1px solid rgba(0,0,0,0.3);
   border-radius: 4px;
-  box-shadow: inset 0 -5px 45px rgba(11,64,240, .6), 0 1px 1px rgba(255,255,255,0.2);
+  box-shadow: inset 0 -5px 45px rgba(11,64,240, .8), 0 1px 1px rgba(255,255,255,0.2);
   -webkit-transition: box-shadow .5s ease;
   -moz-transition: box-shadow .5s ease;
   -o-transition: box-shadow .5s ease;
@@ -58,8 +56,8 @@ input {
     box-shadow: inset 0 -5px 45px rgba(11,64,240, .9), 0 1px 1px rgba(255,255,255,1);
   }
   input:focus {
-    background-color: rgba(11, 64, 240, 200);
-    box-shadow: inset 0 -5px 45px rgba(11,64,240, .9), 0 1px 1px rgba(255,255,255,1);
+    background-color: rgba(11, 64, 240, .5);
+    box-shadow: inset 0 -5px 45px rgba(11,64,240, 1), 0 1px 1px rgba(255,255,255,1);
   }
 
 .submit {
@@ -165,21 +163,22 @@ select {
   text-shadow: 1px 1px 1px rgba(0,0,0,0.6);
   border: 1px solid rgba(0,0,0,0.3);
   border-radius: 4px;
-  box-shadow: inset 0 -5px 45px rgba(11,64,240, .9), 0 1px 1px rgba(255,255,255,0.8);
+  box-shadow: inset 0 -5px 45px rgba(11,64,240, .8), 0 1px 1px rgba(255,255,255,0.8);
   -webkit-transition: box-shadow .5s ease;
   -moz-transition: box-shadow .5s ease;
   -o-transition: box-shadow .5s ease;
   transition: box-shadow .5s ease;
 }
-  select:focus {
-    box-shadow: inset 0 -5px 45px rgba(100,100,100,0.05), 0 1px 1px rgba(255,255,255,0.1);
+  select:hover, select:active {
+    background-color: rgba(255, 0, 0, .4);
+    box-shadow: inset 0 -5px 45px rgba(11,64,240, .9), 0 1px 1px rgba(255,255,255,1);
   }
-select:hover {
-  background-color: rgb(255, 0, 0);
-}
-input:hover {
-  box-shadow: inset 0 -5px 45px rgba(11,64,240, .7), 0 1px 1px rgba(255,255,255,1);
-}
+
+  select:focus {
+    background-color: rgba(11, 64, 240, .5);
+    box-shadow: inset 0 -5px 45px rgba(11,64,240, 1), 0 1px 1px rgba(255,255,255,1);
+  }
+
   ::placeholder
   {
       color: white;

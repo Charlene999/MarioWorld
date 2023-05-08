@@ -1,0 +1,52 @@
+<div class="tbl-content">
+  <table cellpadding="0" cellspacing="0" border="0" id="gameBoard" class="gameBoard">
+
+    <tbody>
+      <tr *ngFor="let cell of AllCells; let i = index">
+        <td id="marioCell" class="cell" *ngFor="let mycell of cell.gameCells; let j = index" (contextmenu)="flag(mycell)" (click)="reveal(mycell)">
+
+          <img *ngIf="mycell.flipped && !mycell.flag" src="{{mycell.showTile}}" alt="Mario Item" width="20" height="20">
+          <img class="numeric" *ngIf="mycell.surroundingMines && !mycell.isMine && mycell.flipped && !mycell.flag" src="{{mycell.countUrl}}" alt="Number of Mines" width="10" height="10">
+          <img *ngIf="!mycell.flipped && !mycell.flag" src="{{mycell.hideTile}}" alt="Question Mark" width="20" height="20">
+          <img *ngIf="!mycell.flipped && mycell.flag" src="{{mycell.flagTile}}" alt="Flag" width="20" height="20">
+          <img *ngIf="mycell.flipped && mycell.flag" src="{{mycell.flagTile}}" alt="Flag" width="20" height="20">
+
+        </td>
+
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="counter">
+
+    <img src="/assets/images/minesweeperImages/mine.png" alt="MineSweeper Cell" width="20" height="20">
+    {{this.numMinesLeft}}
+
+  </div>
+  <select class="levels" id="levels" (click)="getLevel()">
+    <option hidden>Choose a level</option>
+    <option>Beginner</option>
+    <option>Intermediate</option>
+    <option>Hard</option>
+    <option>Super Hard</option>
+    <option>Impossible</option>
+
+  </select>
+  <button (click)="restartGame()" class="restartTime">RESTART</button>
+</div>
+
+<div *ngIf="this.gameOver && this.Lose && !this.viewBoard" class="gameoverLoss">
+  <h1 class="loseText">GAME OVER YOU LOSE</h1>
+  <img class="sadMario" src="/assets/images/minesweeperImages/sadMario.png" alt="Sad Mario" width="300" height="400" />
+  <button (click)="restartGame()" class="restart">RESTART</button>
+  <button (click)="ViewBoard()" class="viewboard">View Board</button>
+</div>
+
+<div *ngIf="this.gameOver && this.Win && !this.viewBoard" class="gameoverWin">
+  <h1 class="winText">YOU WIN!!!</h1>
+  <img class="sadMario" src="/assets/images/minesweeperImages/happyMario.png" alt="Happy Mario" width="300" height="400" />
+  <button (click)="restartGame()" class="restart">RESTART</button>
+
+  <button (click)="ViewBoard()" class="viewboard">View Board</button>
+
+</div>

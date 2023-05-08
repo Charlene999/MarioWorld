@@ -16,6 +16,9 @@ import { EmailComponent } from './users/users-edit/email/email.component';
 import { HomeComponent } from './home/home.component';
 import { HelpComponent } from './help/help.component';
 import { CharactersItemsComponent } from './characters/characters-items/characters-items.component';
+import { UnoGamePlayComponent } from './uno-game-play/uno-game-play.component';
+
+import { MinesweeperGamePlayComponent } from './minesweeper-game-play/minesweeper-game-play.component';
 
 //Routing for the Entire Application
 //NOTE: path must match the routerLink indicated in app.component.html
@@ -43,6 +46,9 @@ const routes: Routes = [
   //All logged in users can view these pages
   { path: 'classes', component: ClassesComponent },
   { path: 'items', component: ItemsComponent },
+  { path: 'uno-game', component: UnoGamePlayComponent },
+  
+  { path: 'minesweeper', component: MinesweeperGamePlayComponent }
 ];
 
 export const appRoutingModule = RouterModule.forRoot(routes);

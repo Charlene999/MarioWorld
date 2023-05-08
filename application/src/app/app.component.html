@@ -1,5 +1,9 @@
 <router-outlet>
   <!-- Navigation Bar with Routing Links-->
+
+  <audio id="homeSong" controls autoplay hidden loop> 
+    <source src="assets/audio/Star Maze.mp3" type="audio/mp3"/>
+  </audio>
   <nav class="navbar navbar-expand navbar-dark bg-dark">
     <a *ngIf="loggedIn()" class="nav-item nav-link" routerLink="/"><img src="assets/images/MarioLogo.png" width="75" height="75" alt="Mario logo"></a>
     <div class="navbar-center">
@@ -35,9 +39,12 @@
           <option id="opts">Edit Items</option>
         </select>
 
-        <a id="game" class="nav-item nav-link" routerLink="" *ngIf="loggedIn()">PLAY</a>
+        <a id="game" class="nav-item nav-link" routerLink="/minesweeper" *ngIf="loggedIn()">PLAY</a>
       </div>
     </div>
+
+    <a *ngIf="Muted()" (click)="Unmute()"class="volume" ><img src="assets/images/mute.png" width="75" height="75" alt="Mute Volume"></a>
+  <a *ngIf="!Muted()" (click) ="Mute()"class="volume" ><img src="assets/images/unmute.png" width="75" height="75" alt="Unmute Volume"></a>
   </nav>
 
   <!-- Home Page Content Container -->

@@ -34,6 +34,7 @@ a {
   letter-spacing: 1px;
   text-align: center;
   text-decoration: none;
+  border-radius: 4px;
 }
 
   a:hover {
@@ -47,6 +48,7 @@ a {
 
 
 .Characters, .Admin {
+  border-radius: 4px;
   border-color: transparent;
   font-size: 25px;
   font-family: Georgia, 'Times New Roman', Times, serif;
@@ -89,7 +91,27 @@ a {
       width: 105px;
   }
 
-.navbar-nav:hover a, .navbar-nav:hover select, .navbar-nav:hover option {
+.navbar-nav a:hover, select:hover, select:active, option:hover  {
+    border-color: red;
+    border-radius: 4px;
   background-color: white;
   color: red;
+}
+
+.navbar-nav:hover
+{
+    border-color: red;
+}
+
+.volume
+{
+    border-radius: 6px;
+    border-color: white;
+    position:absolute;
+    top: 0%;
+    left: 90%;
+}
+.volume:active, .volume:hover
+{
+    cursor: pointer;
 }
